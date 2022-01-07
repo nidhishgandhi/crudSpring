@@ -9,4 +9,5 @@ public interface CrudRepository extends JpaRepository<Crud, Long> {
 //    List<Crud> findByPublished(boolean published);
 //
     List<Crud> findByEmailContaining(String email);
+
 }

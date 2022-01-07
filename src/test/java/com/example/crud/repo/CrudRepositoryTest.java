@@ -20,22 +20,27 @@ class CrudRepositoryTest {
     private CrudRepository crudRepo;
     @Test
     void findByEmailContaining() {
-        Crud crud = new Crud("nidg","gandhiii","8888888888","dcs@gmail.com","555");
-        crudRepo.save(crud);
-
+        Crud crud = new Crud("abc","jbasd","8888888888","dcs@gmail.com","555");
+        Crud saveEmployee = crudRepo.save(crud);//error
+//        Long id=saveEmployee.getId();
         List<Crud> actualResult= crudRepo.findByEmailContaining("dcs@gmail.com");
         assertThat(actualResult).asList();
+        System.out.println("Delete started");
+        crudRepo.deleteById(saveEmployee.getId());
     }
+
     @BeforeEach
     void setUp(){
         System.out.println("Setting Up");
     }
 
     @AfterEach
+    @Test
     void tearDown(){
-      //  Crud crud = new Crud("nidg","gandhiii","8888888888","dcs@gmail.com","555");
+        //Crud crud = new Crud("nidg","gandhiii","8888888888","dcs@gmail.com","555");
         System.out.println("Tearing Down");
-      //  crudRepo.delete(crud);
+       // crudRepo.deleteById(id);
+        //crudRepo.deleteByEmail("dcs@gmail.com");
         System.out.println("Deleted");
     }
 
