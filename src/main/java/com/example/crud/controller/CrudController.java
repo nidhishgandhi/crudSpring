@@ -108,17 +108,4 @@ public class CrudController {
 
     }
 
-//    @GetMapping("/employeedetails/published")
-//    public ResponseEntity<List<Crud>> findByPublished() {
-//        try {
-//            List<Crud> cruds = crudRepository.findByPublished(true);
-//
-//            if (cruds.isEmpty()) {
-//                return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-//            }
-//            return new ResponseEntity<>(cruds, HttpStatus.OK);
-//        } catch (Exception e) {
-//            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
-//        }
-//    }
 }
